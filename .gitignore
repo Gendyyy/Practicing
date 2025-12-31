@@ -65,3 +65,8 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+
+# IDE Configuration
+.claude/
+.cursor/
+
