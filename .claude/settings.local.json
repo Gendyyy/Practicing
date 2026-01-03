@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv init:*)",
+      "Bash(git init:*)",
+      "Bash(uv sync:*)",
+      "Bash(gh pr list:*)",
+      "Bash(brew install:*)"
+    ]
+  },
+  "outputStyle": "Explanatory"
+}
