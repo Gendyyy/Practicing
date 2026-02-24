@@ -143,7 +143,7 @@ console.log("All Emails:", getAllEmails(techCorp));
 // 1. Define the Interfaces (Book, Shelf, Section, Library) for the object below.
 // 2. Write the function 'findBookIndices' to safely traverse it.
 
-const libraryData = {
+const libraryData: Library = {
     name: "City Library",
     sections: [
         {
@@ -164,21 +164,38 @@ const libraryData = {
 // TODO: YOUR CODE HERE
 // interface Book ...
 interface Book {
-    title: string,
-    author: string
+    title: string;
+    author: string;
 }
 // interface Shelf ...
 interface Shelf {
-    id: number,
-    books: Book[],
+    id: string;
+    books?: Book[];
 
 }
 // interface Section ...
 interface Section {
-    name: string,
-    shelves: Shelf[]
+    name: string;
+    shelves: Shelf[];
 }
-export function findBookLocation(lib: typeof libraryData, title: string) {
+interface Library {
+    name: string;
+    sections: Section[];
+}
+export function findBookLocation(lib: Library, title: string) {
     // Return a string like "Fiction > A1" if found, or "Not Found"
+    for (const section of lib.sections) {
+        for (const shelf of section.shelves) {
+            if (shelf.books) {
+                for (const book of shelf.books) {
+                    if(book.title === title){
+                        return `${section.name} > ${shelf.id}`
+                    }
+                }
+            }
+        }
+    }
     // Hint: Use nested for..of loops
 }
+
+console.log(findBookLocation(libraryData, "The Hobbit"))

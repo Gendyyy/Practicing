@@ -59,7 +59,6 @@ const {
 
 console.log(`Theme: ${theme}, Email Enabled: ${email}`);
 
-
 // -----------------------------------------------------------------------------
 // LEVEL 3: RENAMING (ALIASES)
 // -----------------------------------------------------------------------------
@@ -164,9 +163,12 @@ export function extractStatusAndError(response: typeof apiResponse) {
     // TODO: Use destructuring to extract:
     // 1. 'status' from meta
     // 2. The TEXT of the FIRST error message (renamed to 'firstErrorText')
+    const {meta: {status}, errors: [{text: firstErrorText}]} = response
 
     // const { ... } = response;
 
-    // console.log(`Status: ${status}`);
-    // console.log(`Reason: ${firstErrorText}`);
+    console.log(`Status: ${status}`);
+    console.log(`Reason: ${firstErrorText}`);
 }
+
+extractStatusAndError(apiResponse);
