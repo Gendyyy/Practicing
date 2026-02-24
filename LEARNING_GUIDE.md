@@ -39,6 +39,12 @@ Welcome to your structured learning path. This project is organized into "Topics
 - **`01-tsyringe.ts`**: Using Decorators for DI (Microsoft style).
 - **`02-awilix.ts`**: Using Containers for DI (JS standard style).
 
+## 🎨 Module 5: Decorators
+**Folder:** `decorators/`
+
+- **`01-lessons-and-exercises.ts`**: Creating custom Class, Method, and Property decorators.
+- **`02-advanced-patterns.ts`**: Composition, Metadata Reflection, and Auto-binding.
+
 ---
 
 ### 🛠️ Running Code

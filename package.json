@@ -5,9 +5,11 @@
   "type": "module",
   "main": "./main.ts",
   "scripts": {
-    "dev": "bun run main.ts",
-    "start": "bun run main.ts",
-    "build": "bun build ./main.ts --outdir ./dist"
+    "dev": "bun --hot main.ts",
+    "start": "bun main.ts",
+    "build": "bun build ./main.ts --outdir ./dist",
+    "test": "bun test",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -19,6 +21,8 @@
   "dependencies": {
     "awilix": "^12.0.5",
     "reflect-metadata": "^0.2.2",
-    "tsyringe": "^4.10.0"
+    "tsyringe": "^4.10.0",
+    "xlsx": "^0.18.5",
+    "exceljs": "^4.3.0"
   }
 }
